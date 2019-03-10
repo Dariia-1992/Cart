@@ -8,9 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.cart.R;
+import com.example.cart.model.Cart;
+
+import java.util.List;
 
 public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.ViewHolder> {
 
+    private List<Cart> mCarts;
 
     @NonNull
     @Override
@@ -25,7 +29,7 @@ public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mCarts != null ? mCarts.size() : 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
