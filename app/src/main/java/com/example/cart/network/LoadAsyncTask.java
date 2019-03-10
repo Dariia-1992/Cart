@@ -4,6 +4,7 @@ import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.example.cart.MainActivity;
 import com.example.cart.database.CartDataBase;
 import com.example.cart.model.Cart;
 
@@ -23,7 +24,7 @@ public class LoadAsyncTask extends AsyncTask<Void, Void, List<Cart>> {
     private CartLoadingListener mLoadingListener;
     private Context mContext;
 
-    public LoadAsyncTask(CartLoadingListener loadingListener, Context context) {
+    public LoadAsyncTask(MainActivity loadingListener, Context context) {
         mLoadingListener = loadingListener;
         mContext = context;
     }
