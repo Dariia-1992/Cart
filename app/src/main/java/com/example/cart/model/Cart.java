@@ -16,9 +16,9 @@ public class Cart {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    @ColumnInfo(name = "name")
+    @ColumnInfo
     private String name;
-    @ColumnInfo(name = "state")
+    @ColumnInfo
     private String state;
     @ColumnInfo
     private String description;

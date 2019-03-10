@@ -7,9 +7,18 @@ import android.os.AsyncTask;
 import com.example.cart.database.CartDataBase;
 import com.example.cart.model.Cart;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class LoadAsyncTask extends AsyncTask<Void, Void, List<Cart>> {
+
+    public  static final String URL = "";
+    //public static final String API_KEY = "AIzaSyCI_IGNbWo50qWzayIvoVbPCCUmeaxy-To";
 
     private CartLoadingListener mLoadingListener;
     private Context mContext;
@@ -25,7 +34,30 @@ public class LoadAsyncTask extends AsyncTask<Void, Void, List<Cart>> {
         CartDataBase cartDataBase = initializeDatabase();
         carts = cartDataBase.cartDao().getAll();
 
-        return null;
+        if (carts == null || carts.size() == 0){
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            CartService cartService = retrofit.create(CartService.class);
+            try {
+                Response<List<Cart>> response = cartService.getAllCarts().execute();
+                carts = response.body();
+                List<Cart> result = new ArrayList<>();
+                for (Cart cart : carts){
+                    if (cart != null){
+                        result.add(cart);
+                    }
+                }
+                carts = result;
+                cartDataBase.cartDao().insertCart(carts);
+            }
+            catch (IOException exe){
+                exe.printStackTrace();
+            }
+        }
+
+        return carts;
     }
 
     private CartDataBase initializeDatabase(){
