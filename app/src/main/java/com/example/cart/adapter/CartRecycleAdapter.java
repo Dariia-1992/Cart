@@ -33,8 +33,7 @@ public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.
     public void onBindViewHolder(@NonNull CartViewHolder viewHolder, int i) {
         CartItemBinding binding = DataBindingUtil.bind(viewHolder.itemView);
         Cart cart = mCarts.get(i);
-
-
+        binding.setCart(cart);
     }
 
     @Override
