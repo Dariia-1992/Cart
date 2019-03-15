@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
+
         <variadle
             name="cart"
             type="com.example.cart.model.Cart"/>

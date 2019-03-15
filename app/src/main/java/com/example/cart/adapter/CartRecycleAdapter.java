@@ -1,29 +1,35 @@
 package com.example.cart.adapter;
 
+import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.cart.R;
+import com.example.cart.databinding.CartItemBinding;
 import com.example.cart.model.Cart;
 
 import java.util.List;
 
-public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.ViewHolder> {
+public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.CartViewHolder> {
 
     private List<Cart> mCarts;
 
     @NonNull
     @Override
-    public CartRecycleAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+        CartItemBinding binding = DataBindingUtil.inflate(inflater, R.layout.cart_item, viewGroup, false);
+        return new CartViewHolder(binding.getRoot());
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartRecycleAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull CartViewHolder viewHolder, int i) {
+        CartItemBinding binding = DataBindingUtil.bind(viewHolder.itemView);
+        Cart cart = mCarts.get(i);
+
 
     }
 
@@ -32,25 +38,9 @@ public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.
         return mCarts != null ? mCarts.size() : 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        public ViewHolder(@NonNull View itemView) {
+    public class CartViewHolder extends RecyclerView.ViewHolder{
+        public CartViewHolder(@NonNull View itemView) {
             super(itemView);
         }
     }
 }
-
-   /* class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView mCartImage;
-        TextView mCartName;
-        TextView mCareState;
-        TextView mCartCost;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mCartImage = itemView.findViewById(R.id.cart_image);
-            mCartName = itemView.findViewById(R.id.cart_name);
-            mCareState = itemView.findViewById(R.id.cart_state);
-            mCartCost = itemView.findViewById(R.id.cart_cost);
-        }
-    }
-}*/

@@ -11,7 +11,7 @@ public class Cart {
     public static String COLUMN_NAME = "name";
     public static String COLUMN_STATE = "state";
     public static String COLUMN_DESCRIPTION = "description";
-    public static String COLUMN_IMAGE_COST = "cost";
+    public static String COLUMN_COST = "cost";
     public static String COLUMN_IMAGE_URL = "imageUrl";
 
     @PrimaryKey(autoGenerate = true)
@@ -26,15 +26,6 @@ public class Cart {
     private double cost;
     @ColumnInfo
     private String imageUrl;
-
-    public Cart(int id, String name, String state, String description, double cost, String imageUrl) {
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.description = description;
-        this.cost = cost;
-        this.imageUrl = imageUrl;
-    }
 
     public int getId() {
         return id;
@@ -72,8 +63,8 @@ public class Cart {
         return cost;
     }
 
-    public void setCost(double coust) {
-        this.cost = coust;
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 
     public String getImageUrl() {

@@ -26,11 +26,7 @@ public class MainActivity extends AppCompatActivity{
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         mSwipe = findViewById(R.id.swipe);
 
-
-
-        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        //recyclerView.setLayoutManager(layoutManager);
-       // mRecycleAdapter = new CartRecycleAdapter(mList, )
+        //LoadAsyncTask loadAsyncTask = new LoadAsyncTask(this, this);
 
     }
 }
