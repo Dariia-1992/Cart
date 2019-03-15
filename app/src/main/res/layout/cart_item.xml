@@ -6,10 +6,11 @@
     <data>
         <import type="android.view.View" />
 
-        <variadle
+        <variable
             name="cart"
             type="com.example.cart.model.Cart"/>
     </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
-            app:loadImageUrl="@{cart.imageUrl}"
             android:transitionName="cart"
+            app:loadImageUrl="@{cart.imageUrl}"
             app:srcCompat="@mipmap/ic_launcher"/>
 
         <RelativeLayout
@@ -53,7 +54,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
-            android:text="@{cart.cost}"
             tools:text="cost"/>
 
 

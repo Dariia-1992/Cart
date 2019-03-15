@@ -29,6 +29,10 @@ public class LoadAsyncTask extends AsyncTask<Void, Void, List<Cart>> {
         mContext = context;
     }
 
+    public LoadAsyncTask(Context context) {
+        mContext = context;
+    }
+
     @Override
     protected void onPreExecute() {
         if (mLoadingListener != null){

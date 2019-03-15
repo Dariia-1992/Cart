@@ -17,6 +17,10 @@ public class CartRecycleAdapter extends RecyclerView.Adapter<CartRecycleAdapter.
 
     private List<Cart> mCarts;
 
+    public CartRecycleAdapter(List<Cart> carts) {
+        mCarts = carts;
+    }
+
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

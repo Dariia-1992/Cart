@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
 
 import com.example.cart.R;
 import com.example.cart.databinding.CartItemBinding;
 import com.example.cart.model.Cart;
+import com.squareup.picasso.Picasso;
 
 public class CartAdapter extends CursorAdapter {
 
@@ -45,5 +47,11 @@ public class CartAdapter extends CursorAdapter {
         cart.setDescription(description);
         cart.setImageUrl(imageUrl);
 
+        binding.setCart(cart);
+
+    }
+    @BindingAdapter("loadImageUrl")
+    public static void setImageUrl(ImageView image, String url){
+        Picasso.with(image.getContext()).load(url).into(image);
     }
 }
