@@ -17,10 +17,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CartLoadingListener {
 
-    private CartRecycleAdapter mRecycleAdapter;
     private SwipeRefreshLayout mSwipe;
     private  RecyclerView mRecyclerView;
-    public static List<Cart> mList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements CartLoadingListen
     @Override
     public void finishLoading(List<Cart> carts) {
         mRecyclerView.setVisibility(View.VISIBLE);
-        mRecycleAdapter = new CartRecycleAdapter(carts);
-        mRecyclerView.setAdapter(mRecycleAdapter);
+        CartRecycleAdapter adapter = new CartRecycleAdapter(carts);
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

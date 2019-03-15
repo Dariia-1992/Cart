@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "592331482951",
+    "firebase_url": "https://cart-d33ee.firebaseio.com",
+    "project_id": "cart-d33ee",
+    "storage_bucket": "cart-d33ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592331482951:android:fea7a1faae3d0a16",
+        "android_client_info": {
+          "package_name": "com.example.cart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592331482951-fhkjhqaub2ffgn3gask9p5fni54m1lbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cart",
+            "certificate_hash": "129453f043f596fcffed61bd222f453afc4e0fd4"
+          }
+        },
+        {
+          "client_id": "592331482951-1qa2uvoiea35kjlbao3ebecca2sedukr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-KYgGmQ2_zTPX-HH2F7HkywOzpoOOUOo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592331482951-1qa2uvoiea35kjlbao3ebecca2sedukr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
