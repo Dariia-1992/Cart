@@ -35,7 +35,7 @@ public class CartAdapter extends CursorAdapter {
         int id  = cursor.getInt(cursor.getColumnIndex(Cart.COLUMN_ID));
         String name = cursor.getString(cursor.getColumnIndex(Cart.COLUMN_NAME));
         String state = cursor.getString(cursor.getColumnIndex(Cart.COLUMN_STATE));
-        double cost = cursor.getDouble(cursor.getColumnIndex(Cart.COLUMN_COST));
+        String  cost = cursor.getString(cursor.getColumnIndex(Cart.COLUMN_COST));
         String description = cursor.getString(cursor.getColumnIndex(Cart.COLUMN_DESCRIPTION));
         String imageUrl = cursor.getString(cursor.getColumnIndex(Cart.COLUMN_IMAGE_URL));
 

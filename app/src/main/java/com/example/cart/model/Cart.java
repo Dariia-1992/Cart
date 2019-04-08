@@ -23,7 +23,7 @@ public class Cart {
     @ColumnInfo
     private String description;
     @ColumnInfo
-    private double cost;
+    private String cost;
     @ColumnInfo
     private String imageUrl;
 
@@ -59,11 +59,11 @@ public class Cart {
         this.description = description;
     }
 
-    public double getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 

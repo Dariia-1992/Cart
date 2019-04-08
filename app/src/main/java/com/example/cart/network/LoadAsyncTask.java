@@ -19,7 +19,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoadAsyncTask extends AsyncTask<Void, Void, List<Cart>> {
 
     public  static final String URL = "https://cartdatabase.firebaseio.com";
-    //public static final String API_KEY = "AIzaSyCI_IGNbWo50qWzayIvoVbPCCUmeaxy-To";
 
     private CartLoadingListener mLoadingListener;
     private Context mContext;
@@ -29,9 +28,9 @@ public class LoadAsyncTask extends AsyncTask<Void, Void, List<Cart>> {
         mContext = context;
     }
 
-    public LoadAsyncTask(Context context) {
+   /* public LoadAsyncTask(Context context) {
         mContext = context;
-    }
+    }*/
 
     @Override
     protected void onPreExecute() {

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements CartLoadingListen
         mRecyclerView = findViewById(R.id.recyclerView);
         mSwipe = findViewById(R.id.swipe);
 
-        LoadAsyncTask loadAsyncTask = new LoadAsyncTask(this);
+        LoadAsyncTask loadAsyncTask = new LoadAsyncTask(this, this);
         loadAsyncTask.execute();
     }
 
